@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card shadow">
+    <div class="card-header bg-primary text-white">
+        <h4 class="mb-0">📜 История рекомендаций</h4>
+    </div>
+    <div class="card-body">
+        {% if history.items %}
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Дата</th>
+                            <th>ИМТ</th>
+                            <th>Осанка</th>
+                            <th>Рекомендация</th>
+                            <th>Тип</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for rec in history.items %}
+                            <tr>
+                                <td>{{ rec.created_at.strftime('%d.%m.%Y %H:%M') }}</td>
+                                <td>{{ rec.bmi }}</td>
+                                <td>
+                                    {% if rec.posture_risk == 0 %}✅ Норма
+                                    {% elif rec.posture_risk == 1 %}⚠️ Сутулость
+                                    {% else %}⚠️ Асимметрия{% endif %}
+                                </td>
+                                <td>{{ rec.recommendation_text[:80] }}...</td>
+                                <td>
+                                    {% if rec.recommendation_type == 0 %}🔴 Отдых
+                                    {% elif rec.recommendation_type == 1 %}🟢 Легкая
+                                    {% elif rec.recommendation_type == 2 %}🟡 Средняя
+                                    {% else %}🔵 Тяжелая{% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Пагинация -->
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                    {% if history.has_prev %}
+                        <li class="page-item"><a class="page-link" href="{{ url_for('history', page=history.prev_num) }}">←</a></li>
+                    {% endif %}
+                    {% for page_num in history.iter_pages() %}
+                        {% if page_num %}
+                            <li class="page-item {% if page_num == history.page %}active{% endif %}">
+                                <a class="page-link" href="{{ url_for('history', page=page_num) }}">{{ page_num }}</a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                    {% if history.has_next %}
+                        <li class="page-item"><a class="page-link" href="{{ url_for('history', page=history.next_num) }}">→</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        {% else %}
+            <div class="alert alert-info">У вас пока нет рекомендаций</div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

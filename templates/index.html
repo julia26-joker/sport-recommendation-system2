@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row align-items-center min-vh-80">
+    <div class="col-lg-6">
+        <h1 class="display-4 fw-bold">Система рекомендаций тренировочных нагрузок</h1>
+        <p class="lead mt-4">
+            Интеллектуальная система, которая анализирует ваши антропометрические данные, 
+            состояние осанки и уровень восстановления, чтобы предложить оптимальную тренировку.
+        </p>
+        <div class="mt-4">
+            <h5>🔬 Что мы анализируем:</h5>
+            <ul class="list-unstyled">
+                <li>✓ Рост, вес, возраст, ИМТ</li>
+                <li>✓ Фото спины (осанка, асимметрия)</li>
+                <li>✓ Время тренировки (циркадные ритмы)</li>
+                <li>✓ Уровень восстановления</li>
+            </ul>
+        </div>
+        {% if not current_user.is_authenticated %}
+            <div class="mt-4">
+                <a href="{{ url_for('register') }}" class="btn btn-primary btn-lg me-2">Начать</a>
+                <a href="{{ url_for('login') }}" class="btn btn-outline-secondary btn-lg">Войти</a>
+            </div>
+        {% else %}
+            <div class="mt-4">
+                <a href="{{ url_for('recommend') }}" class="btn btn-success btn-lg">Получить рекомендацию</a>
+            </div>
+        {% endif %}
+    </div>
+    <div class="col-lg-6">
+        <div class="bg-light p-4 rounded-3 shadow">
+            <h3 class="text-center mb-3">Как это работает?</h3>
+            <ol>
+                <li>Загрузите фото спины для анализа осанки</li>
+                <li>Укажите антропометрические данные</li>
+                <li>Выберите время тренировки и уровень восстановления</li>
+                <li>Получите персонализированную программу</li>
+            </ol>
+            <div class="alert alert-info mt-3">
+                <strong>💡 Совет:</strong> Для наилучшего результата фотографируйтесь в облегающей одежде, 
+                стоя прямо, на расстоянии 2-3 метров от камеры.
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
