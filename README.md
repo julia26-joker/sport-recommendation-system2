@@ -15,6 +15,23 @@
 - Генерация недельного плана тренировок
 - Рекомендации по питанию и восстановлению
 - История рекомендаций в личном кабинете
+## Скриншоты работы
+
+### Форма ввода данных
+
+![Форма ввода данных](docs/images/03_form.png)
+
+### Анализ осанки (результат детекции)
+
+![Анализ осанки](docs/images/04_posture_result.png)
+
+### Пример рекомендации тренировки
+
+![Рекомендация](docs/images/05_recommendation.png)
+
+### История рекомендаций
+
+![История рекомендаций](docs/images/06_history.png)
 
 ## Технологии
 
@@ -71,41 +88,30 @@ http://localhost:5000
 
 ## Структура проекта
 
-sport-recommendation-system/
- app.py                  # Главный файл приложения
-
-models.py  # Модели базы данных
-
- recommender.py          # ML-модель Gradient Boosting
- 
-posture_analyzer.py     # Модуль компьютерного зрения
-
-requirements.txt        # Зависимости
-
-templates/              # HTML-шаблон
-
-base.html
-
-index.html
-
-login.html
-
-register.html
-
-dashboard.html
-
-history.html
-
-recommend.html
-
-static/                 # CSS и загрузки
-
-css/
-
-uploads/
-
-instance/               # База данных (игнорируется git)
-
+sport-recommendation-system2/
+├── app.py                  # Главный файл приложения
+├── models.py               # Модели базы данных
+├── recommender.py          # ML-модель Gradient Boosting
+├── posture_analyzer.py     # Модуль компьютерного зрения
+├── requirements.txt        # Зависимости
+├── docs/
+│   └── images/
+│       ├── 03_form.png
+│       ├── 04_posture_result.png
+│       ├── 05_recommendation.png
+│       └── 06_history.png
+├── templates/              # HTML-шаблоны
+│   ├── base.html
+│   ├── index.html
+│   ├── login.html
+│   ├── register.html
+│   ├── dashboard.html
+│   ├── history.html
+│   └── recommend.html
+├── static/                 # CSS и загрузки
+│   ├── css/
+│   └── uploads/
+└── instance/               # База данных (игнорируется git)
 ## Автор
 
 Зубова Юлия Андреевна
