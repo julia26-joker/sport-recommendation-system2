@@ -23,7 +23,7 @@
 
 ### Анализ осанки
 
-![Анализ осанки](docs/images/04_posture_result.png)
+![Анализ осанки](docs/04_posture_result.png)
 
 ### Пример рекомендации
 
