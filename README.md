@@ -86,8 +86,6 @@ http://localhost:5000
 | Чувствительность CV-модуля | 0,90 |
 | Время отклика системы | до 2,1 сек |
 
-## Структура проекта
-
 sport-recommendation-system2/
 ├── app.py                  # Главный файл приложения
 ├── models.py               # Модели базы данных
@@ -100,7 +98,7 @@ sport-recommendation-system2/
 │       ├── 04_posture_result.png
 │       ├── 05_recommendation.png
 │       └── 06_history.png
-├── templates/              # HTML-шаблоны
+├── templates/
 │   ├── base.html
 │   ├── index.html
 │   ├── login.html
@@ -108,7 +106,7 @@ sport-recommendation-system2/
 │   ├── dashboard.html
 │   ├── history.html
 │   └── recommend.html
-├── static/                 # CSS и загрузки
+├── static/
 │   ├── css/
 │   └── uploads/
 └── instance/               # База данных (игнорируется git)
