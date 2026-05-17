@@ -27,7 +27,7 @@
 
 ### Пример рекомендации
 
-![Рекомендация](docs/images/05_recommendation.png)
+![Рекомендация](docs/05_recommendation.png)
 
 ### История рекомендаций
 
