@@ -86,30 +86,17 @@ http://localhost:5000
 | Чувствительность CV-модуля | 0,90 |
 | Время отклика системы | до 2,1 сек |
 
-sport-recommendation-system2/
-├── app.py                  # Главный файл приложения
-├── models.py               # Модели базы данных
-├── recommender.py          # ML-модель Gradient Boosting
-├── posture_analyzer.py     # Модуль компьютерного зрения
-├── requirements.txt        # Зависимости
-├── docs/
-│   └── images/
-│       ├── 03_form.png
-│       ├── 04_posture_result.png
-│       ├── 05_recommendation.png
-│       └── 06_history.png
-├── templates/
-│   ├── base.html
-│   ├── index.html
-│   ├── login.html
-│   ├── register.html
-│   ├── dashboard.html
-│   ├── history.html
-│   └── recommend.html
-├── static/
-│   ├── css/
-│   └── uploads/
-└── instance/               # База данных (игнорируется git)
+## Структура проекта
+
+- `app.py` — главный файл приложения
+- `models.py` — модели базы данных
+- `recommender.py` — ML-модель Gradient Boosting
+- `posture_analyzer.py` — модуль компьютерного зрения
+- `requirements.txt` — зависимости
+- `docs/images/` — скриншоты
+- `templates/` — HTML-шаблоны
+- `static/` — CSS и загрузки
+- `instance/` — база данных (игнорируется git)
 ## Автор
 
 Зубова Юлия Андреевна
